@@ -88,14 +88,3 @@ Happy Coding 💻🔥
 
 ---
 
-### ✅ Next Steps
-
-Now save this as `README.md` and run:
-
-```bash
-git add README.md
-git commit -m "Add project README with goals and LinkedIn"
-git push
-````
-
-Would you like a script to automatically update the problem log every day?
