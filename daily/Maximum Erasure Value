@@ -1,0 +1,38 @@
+class Solution {
+    public int maximumUniqueSubarray(int[] nums) {
+        int n =  nums.length;
+        int left=0, right =0;
+        HashSet<Integer> st = new HashSet<>();
+        st.add(nums[right]);
+
+        int maxSum = nums[right];
+        int result = nums[right];
+        right++;
+
+        
+
+        while(right<n){
+            if(!st.contains(nums[right])){
+                maxSum+= nums[right];
+                st.add(nums[right]);
+            }
+
+            else{
+                while(!st.isEmpty() && st.contains(nums[right])){
+                    st.remove(nums[left]);
+                    maxSum-=nums[left];
+                    left++;
+                }
+                maxSum+=nums[right];
+                st.add(nums[right]);
+               
+            }
+           
+            right++;
+            result = Math.max(result,maxSum);
+
+        }
+
+        return result;
+    }
+}
